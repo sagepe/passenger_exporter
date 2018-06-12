@@ -23,7 +23,7 @@ import (
 )
 
 const (
-	namespace = "passenger_nginx"
+	namespace = "passenger"
 
 	nanosecondsPerSecond = 1000000000
 )
@@ -333,7 +333,7 @@ func main() {
 
 	http.Handle(*metricsPath, prometheus.Handler())
 
-	log.Infoln("starting passenger_exporter_nginx", version.Info())
+	log.Infoln("starting prometheus-passenger-exporter", version.Info())
 	log.Infoln("build context", version.BuildContext())
 	log.Infoln("listening on", *listenAddress)
 	log.Fatal(http.ListenAndServe(*listenAddress, nil))
